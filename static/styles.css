@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+img {
+    max-width: 200px;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type="text"],
+input[type="submit"] {
+    font-size: 16px;
+}
+input[type="submit"] {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 12px 24px;
+    transition: background-color 0.3s;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.output-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add some margin to the submit button */
+input[type="submit"] {
+    margin-left: 10px;
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.currency {
+    position: absolute;
+    left: 8px; /* Adjust this value to position the dollar sign */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+input[type="text"] {
+    padding-left: 20px; /* Add some padding to the left of the input field to make space for the dollar sign */
+}
+
+.output {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.output span {
+    color: #4caf50;
+}
