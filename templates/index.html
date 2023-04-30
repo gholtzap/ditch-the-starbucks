@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,45 +19,45 @@
                 { id: 'res40', years: 40 },
                 { id: 'res50', years: 50 },
             ];
-        
-            let x = parseInt(inputText)
-        
-            function rec(increment, starting, currDay, maxDay) {
-                if (currDay >= maxDay) {
+
+            function rec(increment, starting, currYr, maxYr) {
+                if (currYr >= maxYr) {
                     return starting;
                 }
-                return rec(increment, (increment + starting) * (1 + 0.00017342465), currDay + 1, maxDay);
+
+                return rec(increment, (increment + starting) * (1 + 0.0633), currYr + 1, maxYr);
             }
-        
+
             results.forEach(result => {
                 const resElement = document.getElementById(result.id);
-                const amount = rec(parseInt(inputText), 0, 0, 365 * result.years).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                const amount = rec(parseFloat(inputText) * 365, 0, 0, result.years).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                 resElement.innerHTML = `In <span>${result.years}</span> year${result.years > 1 ? 's' : ''}, you would save: $<span>${amount}</span>`;
             });
         }
-        
+
     </script>
 </head>
+
 <body>
-    
+
     <img src="{{ url_for('static', filename='starbucks_creepy_png.png') }}" alt="Logo">
     <h1> Ditch the Starbucks </h1>
-    
+
     <h3> How much money do you spend on Coffee per day?:</h3>
-    
+
     <div class="form-container">
 
-        
+
         <div class="input-container">
             <span class="currency">$</span>
             <input type="text" name="input_text" placeholder="">
         </div>
         <form onsubmit="submitForm(event)">
-        
+
             <input type="submit" value="Submit">
         </form>
     </div>
-    
+
 
     <div class="output-container">
         <div id="res1" class="output"></div>
@@ -70,4 +71,5 @@
 
 
 </body>
+
 </html>
