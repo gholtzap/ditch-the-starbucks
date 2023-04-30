@@ -4,4 +4,4 @@ Input how much money you spend on Coffee every day, and you can see approx. how 
 
 > 1 Utilizes compound interest (assumes you continue investing money every year)
 
-![](https://imgur.com/a/l8Q8Ic1)
+![](https://i.imgur.com/1k6IWmy.png)
